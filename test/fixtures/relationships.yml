@@ -1,0 +1,15 @@
+one:
+  follower: bruno
+  followed: lana
+
+two:
+  follower: bruno
+  followed: mallory
+
+three:
+  follower: lana
+  followed: bruno
+
+four:
+  follower: archer
+  followed: bruno
