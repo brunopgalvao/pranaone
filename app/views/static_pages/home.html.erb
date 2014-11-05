@@ -12,20 +12,12 @@
       </section>
     </aside>
     <div class="col-md-8">
-      <h3>Micropost Feed</h3>
+      <h3>Your Feed</h3>
       <%= render 'shared/feed' %>
     </div>
   </div>
 <% else %>
-  <div class="center jumbotron">
-    <h1>Welcome to the Sample App</h1>
-
-    <h2>
-      We are here.
-      <a href="#">PranaOne</a>
-      sample application.
-    </h2>
-
-    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  <div class="center">
+    <h1>Flow with us</h1>
   </div>
 <% end %>

@@ -9,15 +9,14 @@
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>
   </head>
-  <body class="normal">
-    <%= render 'layouts/header' %>
+  <body class="landing">
+    <%= render 'layouts/header_landing' %>
     <div class="container">
       <% flash.each do |message_type, message| %>
         <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
       <% end %>
       <%= yield %>
-	    <%= render 'layouts/footer' %>
-      <%= debug(params) if Rails.env.development? %>
+      <%#= debug(params) if Rails.env.development? %>
     </div>
   </body>
 </html>
