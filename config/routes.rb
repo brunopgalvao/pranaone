@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :events
+
   get 'password_resets/new'
 
   get 'password_resets/edit'

@@ -16,7 +16,7 @@
       <ul class="nav navbar-nav navbar-left">
 	    <li role="presentation">
 	      <%= link_to(root_path) do %>
-	        <span class="glyphicon glyphicon-home"></span> Home
+	        <span class="glyphicon glyphicon-home"></span> Om
 	      <% end %>
 	    </li>
 		<% if logged_in? %>
@@ -25,31 +25,25 @@
 		   <span class="glyphicon glyphicon-list"></span> Schedule
 	      <% end %>
 	    </li>
+    <% if current_user.admin? %>
 		<li role="presentation">
 		  <%= link_to(users_path) do %>
 		   <span class="glyphicon glyphicon-globe"></span> Users
-	      <% end %>
-	    </li>
+	    <% end %>
+	  </li>
+    <% end %>
 		<li role="presentation">
-		  <%= link_to(root_path) do %>
+		  <%= link_to(events_path) do %>
 		   <span class="glyphicon glyphicon-calendar"></span> Events
 	      <% end %>
 	    </li>
-		<li role="presentation">
-		  <%= link_to(root_path) do %>
-		   <span class="glyphicon glyphicon-tower"></span> Train
-	      <% end %>
-	    </li>
-	    <li role="presentation">
-	      <%= link_to(root_path) do %>
-	        <span class="glyphicon glyphicon-tasks"></span> Rates
-	      <% end %>
-	    </li>
+      <% if current_user.instructor? %>
 	    <li role="presentation">
 	      <%= link_to(current_user) do %>
 	        <span class="glyphicon glyphicon-user"></span> Me
 	      <% end %>
 	    </li>
+      <% end %>
 	    <li role="presentation">
 	      <%= link_to(edit_user_path(current_user)) do %>
 	        <span class="glyphicon glyphicon-cog"></span> Settings
@@ -66,19 +60,9 @@
 	        <span class="glyphicon glyphicon-calendar"></span> Events
 	      <% end %>
 	    </li>
-		<li role="presentation">
-		  <%= link_to(root_path) do %>
-		   <span class="glyphicon glyphicon-tower"></span> Train
-	      <% end %>
-	    </li>
 	    <li role="presentation">
 	      <%= link_to(root_path) do %>
 	        <span class="glyphicon glyphicon-user"></span> Instructors
-	      <% end %>
-	    </li>
-	    <li role="presentation">
-	      <%= link_to(root_path) do %>
-	        <span class="glyphicon glyphicon-tasks"></span> Rates
 	      <% end %>
 	    </li>
 		<% if logged_in? %>

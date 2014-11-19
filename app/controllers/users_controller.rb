@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:index, :edit, :update, :destroy,
+  before_action :logged_in_user,  only: [:index, :edit, :update, :destroy,
                                         :following, :followers]
-  before_action :correct_user,   only: [:edit, :update]
-  before_action :admin_user,     only: :destroy
+  before_action :instructor_user, only: [:followers]                                      
+  before_action :correct_user,    only: [:edit, :update]
+  before_action :admin_user,      only: [:index, :destroy]
   
   def index
     @users = User.where(activated: true).paginate(page: params[:page])
@@ -75,10 +76,5 @@ class UsersController < ApplicationController
     def correct_user
       @user = User.find(params[:id])
       redirect_to(root_url) unless current_user?(@user)
-    end
-    
-    # Confirms an admin user.
-    def admin_user
-      redirect_to(root_url) unless current_user.admin?
     end
 end
