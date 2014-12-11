@@ -1,0 +1,29 @@
+<%= form_for(@yoga_class) do |f| %>
+  <% if @yoga_class.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@yoga_class.errors.count, "error") %> prohibited this yoga_class from being saved:</h2>
+
+      <ul>
+      <% @yoga_class.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id, "Instructor" %><br>
+    <%= f.collection_select :user_id, User.where(instructor: true), :id, :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

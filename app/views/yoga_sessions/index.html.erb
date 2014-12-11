@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Yoga Sessions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Session date</th>
+      <th>Session time</th>
+      <th>Yoga class</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @yoga_sessions.each do |yoga_session| %>
+      <tr>
+        <td><%= yoga_session.session_date %></td>
+        <td><%= yoga_session.session_time %></td>
+        <td><%= yoga_session.yoga_class.name %></td>
+        <td><%= yoga_session.yoga_class.user.name %></td>
+        <td><%= link_to 'Show', yoga_session %></td>
+        <td><%= link_to 'Edit', edit_yoga_session_path(yoga_session) %></td>
+        <td><%= link_to 'Destroy', yoga_session, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Yoga session', new_yoga_session_path %>

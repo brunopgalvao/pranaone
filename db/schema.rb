@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141106004036) do
+ActiveRecord::Schema.define(version: 20141211001600) do
 
   create_table "events", force: true do |t|
     t.string   "title"
@@ -59,5 +59,25 @@ ActiveRecord::Schema.define(version: 20141106004036) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+
+  create_table "yoga_classes", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "yoga_classes", ["user_id"], name: "index_yoga_classes_on_user_id"
+
+  create_table "yoga_sessions", force: true do |t|
+    t.date     "session_date"
+    t.string   "session_time"
+    t.integer  "yoga_class_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "yoga_sessions", ["yoga_class_id"], name: "index_yoga_sessions_on_yoga_class_id"
 
 end

@@ -21,11 +21,16 @@
 	    </li>
 		<% if logged_in? %>
 		<li role="presentation">
-		  <%= link_to(root_path) do %>
+		  <%= link_to(schedule_path) do %>
 		   <span class="glyphicon glyphicon-list"></span> Schedule
 	      <% end %>
 	    </li>
     <% if current_user.admin? %>
+		<li role="presentation">
+		  <%= link_to(classes_path) do %>
+		   <span class="glyphicon glyphicon-th"></span> Classes
+	      <% end %>
+	    </li>
 		<li role="presentation">
 		  <%= link_to(users_path) do %>
 		   <span class="glyphicon glyphicon-globe"></span> Users

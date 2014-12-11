@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  session_date: 2014-12-10
+  session_time: MyString
+  yoga_class_id: 
+
+two:
+  session_date: 2014-12-10
+  session_time: MyString
+  yoga_class_id: 

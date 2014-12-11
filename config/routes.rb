@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  resources :yoga_sessions
+  get    'schedule'  => 'yoga_sessions#schedule'
+  
+  resources :yoga_classes
+  get    'classes'  => 'yoga_classes#index'
+
   resources :events
 
   get 'password_resets/new'
@@ -9,7 +15,7 @@ Rails.application.routes.draw do
   get 'account_activations/edit'
 
   get    'sessions/new'
-
+  
   get    'signup'  => 'users#new'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @yoga_class.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @yoga_class.description %>
+</p>
+
+<p>
+  <strong>Instructor:</strong>
+  <%= @yoga_class.user.name %>
+</p>
+
+<%= link_to 'Edit', edit_yoga_class_path(@yoga_class) %> |
+<%= link_to 'Classes', yoga_classes_path %>
