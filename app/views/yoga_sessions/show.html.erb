@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Session date:</strong>
+  <%= @yoga_session.session_date %>
+</p>
+
+<p>
+  <strong>Session time:</strong>
+  <%= @yoga_session.session_time %>
+</p>
+
+<p>
+  <strong>Yoga class:</strong>
+  <%= @yoga_session.yoga_class.name %>
+</p>
+
+<%= link_to 'Edit', edit_yoga_session_path(@yoga_session) %> |
+<%= link_to 'Schedule', yoga_sessions %>
