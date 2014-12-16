@@ -5,7 +5,9 @@ class YogaSessionsController < ApplicationController
 
   # GET /yoga_sessions/schedule
   def schedule
-    @yoga_sessions = YogaSession.where(session_date: Date.today..1.week.from_now).order(:session_date)
+    @yoga_sessions = YogaSession.all
+    #Enable when launched. Use above to display a demo schedule.
+    #@yoga_sessions = YogaSession.where(session_date: Date.today..1.week.from_now).order(:session_date)
   end
   
   # GET /yoga_sessions
