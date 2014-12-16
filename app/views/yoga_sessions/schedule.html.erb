@@ -1,15 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>This Week</h1>
-
+<h1>Weekly Schedule</h1>
+<h2><%= Date.today.strftime("%m/%d") %> - <%= 1.week.from_now.strftime("%m/%d") %></h2>
 <table class="table table-striped">
   <tbody>
     <% @yoga_sessions.each do |yoga_session| %>
       <tr>
+        <td><%= yoga_session.session_date.strftime("%m/%d") %></td>
         <td><%= yoga_session.formatted_date %></td>
         <td><%= yoga_session.formatted_time %></td>
-        <td><%= yoga_session.yoga_class.name %></td>
-        <td><%= yoga_session.yoga_class.user.name %></td>
+        <td><%= link_to yoga_session.yoga_class.name, yoga_class_path(yoga_session.yoga_class) %></td>
+        <td><%= link_to yoga_session.yoga_class.user.name, user_path(yoga_session.yoga_class.user) %></td>
       </tr>
     <% end %>
   </tbody>

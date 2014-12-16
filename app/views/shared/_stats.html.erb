@@ -6,7 +6,7 @@
     </strong>
     following
   </a>
-  <% if current_user.instructor? %>
+  <% if @user.instructor? %>
     <a href="<%= followers_user_path(@user) %>">
       <strong id="followers" class="stat">
         <%= @user.followers.count %>

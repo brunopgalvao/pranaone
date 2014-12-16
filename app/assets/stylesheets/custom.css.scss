@@ -10,6 +10,11 @@ $gray-medium-light: #eaeaea;
   -webkit-box-sizing: border-box;
   box-sizing:         border-box;
 }
+@mixin rounded($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      border-radius: $radius;
+  }
 
 /* universal */
 
@@ -167,23 +172,13 @@ aside {
 }
 
 .gravatar {
+  @include rounded(10px);
   float: left;
   margin-right: 10px;
 }
-
 .gravatar_edit {
   margin-top: 15px;
 }
-
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
-
-.gravatar_edit {
-  margin-top: 15px;
-}
-
 .stats {
   overflow: auto;
   margin-top: 0;
@@ -303,6 +298,7 @@ input {
     margin-left: 60px;
   }
   .gravatar {
+    @include rounded(10px);
     float: left;
     margin-right: 10px;
     margin-top: 5px;
