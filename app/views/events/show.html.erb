@@ -4,12 +4,14 @@
   	<%= @event.title %>
   </div>
 </div>
+<% if logged_in? && current_user.admin? %>
 <div class="row">
   <div class="col-md-12">
     <span class="manage"><%= link_to 'Edit', edit_event_path(@event) %></span> |
     <span class="manage"><%= link_to 'Delete', @event, method: :delete, data: { confirm: 'Are you sure?' } %></span>
   </div>
 </div>
+<% end %>
 <div class="row">
   <div class="col-md-12 event-desc">
   	<%= @event.desc %>

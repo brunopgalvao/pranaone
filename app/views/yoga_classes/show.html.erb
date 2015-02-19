@@ -14,6 +14,7 @@
   <strong>Instructor:</strong>
   <%= @yoga_class.user.name %>
 </p>
-
+<% if logged_in? && current_user.admin? %>
 <%= link_to 'Edit', edit_yoga_class_path(@yoga_class) %> |
 <%= link_to 'Classes', yoga_classes_path %>
+<% end %>

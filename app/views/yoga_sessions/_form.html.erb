@@ -20,10 +20,10 @@
     <%= f.time_field(:session_time) %>
   </div>
   <div class="field">
-    <%= f.label :yoga_class_id %><br>
+    <%= f.label :yoga_class_id, "Yoga Class" %><br>
     <%= f.collection_select :yoga_class_id, YogaClass.all, :id, :name %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit"%>
   </div>
 <% end %>

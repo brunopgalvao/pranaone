@@ -6,7 +6,9 @@
   <tbody>
     <% @yoga_sessions.each do |yoga_session| %>
       <tr>
-        <!-- <td><%= yoga_session.session_date.strftime("%m/%d") %></td> -->
+        <% if logged_in? && current_user.admin? %>
+        <td><%= link_to yoga_session.session_date.strftime("%m/%d"), yoga_session_path(yoga_session) %></td>
+        <% end %>
         <td><%= yoga_session.formatted_date %></td>
         <td><%= yoga_session.formatted_time %></td>
         <td><%= link_to yoga_session.yoga_class.name, yoga_class_path(yoga_session.yoga_class) %></td>
